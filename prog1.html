@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="mainarea">
+        <h1>To Do List</h1>
+        <div class="listarea">
+            <input id="task" type="text">
+            <button>Add</button>
+            <ol>
+                <li>Wake Up</li>
+                <li>Get Ready for Office</li>
+                <li>Do your Breakfast</li>
+            </ol>
+        </div>
+        
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                let tasktxt = $("#task").val();
+                if(tasktxt.length == 0){
+                    alert("Enter something");
+                }
+                else{
+                    $("ol").append(`<li>${tasktxt}</li>`)
+                    $("#task").val('');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
